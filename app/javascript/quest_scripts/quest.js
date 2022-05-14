@@ -1,3 +1,5 @@
+console.log("Script is working")
+window.onload = function() {
 inputParametres = {
 
     //anamnesis input parametres
@@ -124,7 +126,7 @@ inputParametres = {
     correctTreatmentNonMedicate: ["Внутривенный доступ", "Оксигенотерапия"],
     medicateTreatmentWrong: false,
     medicateTreadmentNotFull: false,
-    moreThan1Thrombolytic: false,
+    moreThan1Thrombolytic: false
 }
 
 
@@ -894,3 +896,5 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
+
+};
