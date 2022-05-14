@@ -1,2 +1,421 @@
-<h1>Quest#identification</h1>
-<p>Find me in app/views/quest/identification.html.erb</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true %>
+    <title>Виртуальный пациент - Скорая помощь</title>
+</head>
+<div class="container">
+        <div class="content">
+            <!-- CHART -->
+            <div class="chart box">
+                <div class="box_header">
+                    <img src="./images/patient.jpg" alt="Иван Иванов">
+                    <div class="title">
+                        <span class="title__name">Иван Иванов</span>
+                        <span class="title__dicription">Пенсионер</span>
+                    </div>
+
+                </div>
+                <div class="box_body">
+                    <!-- chart body -->
+                <div class="patient">Здравствуйте, доктор! <span>12:23</span> </div></div>
+            </div>
+            <!-- END CHART -->
+
+            <!-- DOCTOR QUESTION BOX -->
+            <div class="questions box">
+                <div class="box_header">
+                    <div class="title">Вопросы</div>
+                </div>
+                <div class="box_body">
+                    <!-- question body -->
+                <div class="question" number="0">Здравствуйте! Что вас беспокоит?</div></div>
+            </div>
+            <!-- END DOCTOR QUESTION BOX -->
+
+            <!-- MENU -->
+            <div class="menu box">
+                <div class="box_header">
+                    <div class="title">Меню</div>
+                </div>
+                <div class="box_body">
+                    <button class="anamnesis">Жалобы и анамнез <span class="blinker">•</span></button>
+                    <button class="physical-research">Физикальное исследование</button>
+                    <button class="instrumental-research">Инструментальные исследования</button>
+                    <button class="diagnosis">Диагноз</button>
+                    <button class="treatment">Лечение</button>
+                    <button class="close-game">Завершить случай</button>
+                </div>
+                <div class="mobile-menu">
+                    <div class="arrow">
+                        <span class="arrow-left"></span>
+                        <span class="arrow-right"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- END MENU -->
+
+        </div>
+        <!-- END CONTENT -->
+
+        <!-- MODAL WINDOW -->
+        <div class="modal modal-starting" style="display: none;">
+            <div class="modal_header">
+                Общая информация
+            </div>
+            <div class="modal_body">
+                <h2>Пациент</h2>
+                <p>Мужчина, 66 лет, пенсионер. Самостоятельно вызвал скорую помощь с жалобами на боли в грудной клетке.
+                </p>
+                <br>
+                <h2>Цель</h2>
+                <p>Провести обследование, поставить диагноз, назначить лечение.</p>
+            </div>
+            <div class="modal_footer">
+                <button class="modal_start">Начать</button>
+            </div>
+        </div>
+        <!-- END MODAL WINDOW -->
+
+        <!-- ANAMBESIS MODAL -->
+        <div class="modal modal-anamnesis">
+            <div class="modal_header modal-header-anamnesis">
+                Жалобы и анамнез
+            </div>
+            <div class="modal_body modal-body-anamnesis">
+                <h2 class="default-message">Нет сведений</h2>
+            </div>
+            <div class="modal_footer modal-footer-anamnesis">
+                <button class="close-anamnesis">Закрыть</button>
+            </div>
+        </div>
+        <!-- END ANAMBESIS MODAL -->
+
+        <!-- PHYSICAL RESEARCH MODAL -->
+        <div class="modal modal-physical-research">
+            <div class="modal_header modal-header-physical-research">
+                Физикальное обследование
+            </div>
+            <div class="modal_body modal-body-physical-research">
+                <div>
+                    <h2>Осмотр:</h2>
+                    <p>Общее состояние удовлетворительное. Сознание ясное. Положение активное. Телосложение нормостеническое. Кожные покровы нормальной окраски, чистые, умеренной влажности. Отёков нет.
+                    </p>
+                    <h2>Аускультация:</h2>
+                    <p>Тоны сердца приглушенные, ритмичные. Шумов нет.</p>
+                    <p>Дыхание везикулярное, без хрипов.</p>
+                    <h2>Пальпация:</h2>
+                    <p>Живот мягкий, безболезненный.</p>
+                    <h2>Неврологический статус:</h2>
+                    <p>Всесторонне ориентирован правильно. Чувствительность и движения в полном объёме. Ассиметрии нет. Речь не нарушена.</p>
+                    <h2>Показатели:</h2>
+                    <p>АД = 110/60 мм рт.ст.</p>
+                    <p>ЧСС = 88 уд./мин</p>
+                    <p>ЧДД = 20/мин</p>
+                    <p>Рост: 177 см</p>
+                    <p>Вес: 80 кг</p>
+                </div>
+
+            </div>
+            <div class="modal_footer modal-footer-physical-research">
+                <button class="close-physical-research">Закрыть</button>
+            </div>
+        </div>
+        <!-- END PHYSICAL RESEARCH MODAL -->
+
+        <!-- INSTRUMENTAL RESEARCH MODAL -->
+        <div class="modal modal-instrumental-research">
+            <div class="modal_header modal-instrumental-research">
+                Инструментальные исследования
+            </div>
+            <div class="modal_body modal-body-instrumental-research">
+                <div class="instrument pulkoksimetr"><img src="images/pulkoksimetr.jpg" alt="Пульсоксиметр"><span>Пульсоксиметр</span></div>
+                <div class="instrument ekg"><img src="images/ekg.jpg" alt="ЭКГ"><span>ЭКГ</span></div>
+                <div class="instrument troponinovyj-test"><img src="images/troponinovyj-test.jpg" alt="Тропониновый
+                        тест"><span>Тропониновый
+                        тест</span></div>
+                <div class="instrument glukometr"><img src="images/glukometr.jpg" alt="Глюкометр"><span>Глюкометр</span>
+                </div>
+            </div>
+            <div class="modal_footer modal-footer-instrumental-research">
+                <button class="close-instrumental-research">Закрыть</button>
+            </div>
+        </div>
+
+        <!-- pulkoksimetr modal-->
+        <div class="modal modal-pulkoksimetr">
+            <div class="modal_header modal-header-pulkoksimetr">Пульсикометр</div>
+            <div class="modal_body modal-body-pulkoksimetr"><span>Результат: SpO2=95, bpm = 88</span></div>
+            <div class="modal_footer modal-footer-pulkoksimetr"><button class="close-pulkoksimetr">Закрыть</button>
+            </div>
+        </div>
+        <!-- end pulkoksimetr modal-->
+        <!-- ekg modal-->
+        <div class="modal modal-ekg">
+            <div class="modal_header modal-header-ekg">ЭКГ</div>
+            <div class="modal_body modal-body-ekg"><img src="images/ekg_01.jpg"></div>
+            <div class="modal_footer modal-footer-ekg"><button class="close-ekg">Закрыть</button></div>
+        </div>
+        <!-- end ekg modal-->
+        <!-- troponinovyj-test modal-->
+        <div class="modal modal-troponinovyj-test">
+            <div class="modal_header modal-header-troponinovyj-test">Тропониновый тест</div>
+            <div class="modal_body modal-body-troponinovyj-test"><img src="images/troponinovjy-minus.jpg"></div>
+            <div class="modal_footer modal-footer-troponinovyj-test"><button class="close-troponinovyj-test">Закрыть</button></div>
+        </div>
+        <!-- end troponinovyj-test modal-->
+        <!-- glukometr modal-->
+        <div class="modal modal-glukometr">
+            <div class="modal_header modal-header-glukometr">Глюкометр</div>
+            <div class="modal_body modal-body-glukometr"><span>Результат: Глюкоза = 6,2 ммоль/л</span></div>
+            <div class="modal_footer modal-footer-glukometr"><button class="close-glukometr">Закрыть</button></div>
+        </div>
+        <!-- end glukometr modal-->
+
+        <!-- END INSTRUMENTAL RESEARCH MODAL -->
+
+        <!-- DIAGNOSIS MODAL -->
+        <div class="modal modal-diagnosis">
+            <div class="modal_header modal-header-diagnosis">Диагноз</div>
+            <div class="modal_body modal-body-diagnosis">
+
+                <!-- MAIN DIAGNOSIS BOX -->
+                <div class="diagnosis-box main">
+                    <div class="diagnosis-box__header">Основной диагноз</div>
+                    <div class="diagnosis-box__body">
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-1" type="radio" name="main-diagnosis" value="Внебольничная пневмония">
+                            <label for="main-diagnosis-1">Внебольничная пневмония</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-2" type="radio" name="main-diagnosis" value="Тромбоэмболия легочной артерии">
+                            <label for="main-diagnosis-2">Тромбоэмболия легочной артерии</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-3" type="radio" name="main-diagnosis" value="Остеохондроз позвоночника">
+                            <label for="main-diagnosis-3">Остеохондроз позвоночника</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-4" type="radio" name="main-diagnosis" value="Межрёберная невралгия">
+                            <label for="main-diagnosis-4">Межрёберная невралгия</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-5" type="radio" name="main-diagnosis" value="Острый коронарный синдром с подъёмом ST">
+                            <label for="main-diagnosis-5">Острый коронарный синдром с подъёмом ST</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-6" type="radio" name="main-diagnosis" value="Острый коронарный синдром без подъёма ST">
+                            <label for="main-diagnosis-6">Острый коронарный синдром без подъёма ST</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-7" type="radio" name="main-diagnosis" value="Стабильная стенокардия">
+                            <label for="main-diagnosis-7">Стабильная стенокардия</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-8" type="radio" name="main-diagnosis" value="Нестабильная стенокардия">
+                            <label for="main-diagnosis-8">Нестабильная стенокардия</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-9" type="radio" name="main-diagnosis" value="Стенокардия Принцметала">
+                            <label for="main-diagnosis-9">Стенокардия Принцметала</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="main-diagnosis-10" type="radio" name="main-diagnosis" value="Крупноочаговый инфаркт миокарда">
+                            <label for="main-diagnosis-10">Крупноочаговый инфаркт миокарда</label>
+                        </div>
+                        <div class="ratio">
+                            <input id="main-diagnosis-11" type="radio" name="main-diagnosis" value="Мелкоочаговый инфаркт миокарда">
+                            <label for="main-diagnosis-11">Мелкоочаговый инфаркт миокарда</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MAIN DIAGNOSIS BOX -->
+
+                <!-- COMPLICATIONS DIAGNOSTIC BOX -->
+                <div class="diagnosis-box complications">
+                    <div class="diagnosis-box__header">Осложнения</div>
+                    <div class="diagnosis-box__body">
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-1" type="checkbox" name="complications-diagnosis" value="Дыхательная недостаточность">
+                            <label for="complications-diagnosis-1">Дыхательная недостаточность</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-2" type="checkbox" name="complications-diagnosis" value="Кардиогенный шок">
+                            <label for="complications-diagnosis-2">Кардиогенный шок</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-3" type="checkbox" name="complications-diagnosis" value="Анемия">
+                            <label for="complications-diagnosis-3">Анемия</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-4" type="checkbox" name="complications-diagnosis" value="Нарушение мозгового кровообращения">
+                            <label for="complications-diagnosis-4">Нарушение мозгового кровообращения</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-5" type="checkbox" name="complications-diagnosis" value="Отёк лёгких">
+                            <label for="complications-diagnosis-5">Отёк лёгких</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-6" type="checkbox" name="complications-diagnosis" value="Острая левожелудочковая недостаточность">
+                            <label for="complications-diagnosis-6">Острая левожелудочковая недостаточность</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-7" type="checkbox" name="complications-diagnosis" value="Плеврит">
+                            <label for="complications-diagnosis-7">Плеврит</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="complications-diagnosis-9" type="checkbox" name="complications-diagnosis" value="Гидроторакс">
+                            <label for="complications-diagnosis-9">Гидроторакс</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- ENDCOMPLICATIONS DIAGNOSTIC BOX -->
+
+                <!-- ACCOMPANYING ILLNESSES DIAGNISIS BOX -->
+                <div class="diagnosis-box accompanying-illnesses">
+                    <div class="diagnosis-box__header">Сопутствующие заболевания</div>
+                    <div class="diagnosis-box__body">
+
+                        <div class="ratio">
+                            <input id="accompanying-illnesses-diagnosis-1" type="checkbox" name="accompanying-illnesses-diagnosis" value="Хроническая обструктивная болезнь">
+                            <label for="accompanying-illnesses-diagnosis-1">Хроническая обструктивная болезнь
+                                лёгких</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="accompanying-illnesses-diagnosis-2" type="checkbox" name="accompanying-illnesses-diagnosis" value="Сахарный диабет инсулиннезависимый">
+                            <label for="accompanying-illnesses-diagnosis-2">Сахарный диабет инсулиннезависимый</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="accompanying-illnesses-diagnosis-3" type="checkbox" name="accompanying-illnesses-diagnosis" value="Гипертоническая болезнь">
+                            <label for="accompanying-illnesses-diagnosis-3">Гипертоническая болезнь</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="accompanying-illnesses-diagnosis-4" type="checkbox" name="accompanying-illnesses-diagnosis" value="Остеохондроз позвоночника">
+                            <label for="accompanying-illnesses-diagnosis-4">Остеохондроз позвоночника</label>
+                        </div>
+
+                        <div class="ratio">
+                            <input id="accompanying-illnesses-diagnosis-5" type="checkbox" name="accompanying-illnesses-diagnosis" value="Постхолецистэктомический синдром">
+                            <label for="accompanying-illnesses-diagnosis-5">Постхолецистэктомический синдром</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ACCOMPANYING ILLNESSES DIAGNISIS BOX -->
+
+            </div>
+            <div class="modal_footer modal-footer-diagnosis">
+                <button class="assign-diagnosis">Поставить диагноз</button>
+                <button class="close-diagnosis">Закрыть</button>
+            </div>
+        </div>
+
+        <!-- non active diagnosis modal  -->
+        <div class="modal modal-non-active-diagnosis">
+            <div class="modal_header">
+                Диагноз
+            </div>
+            <div class="modal_body modal-body-non-active-diagnosis">
+
+            </div>
+            <div class="modal_footer">
+                <button class="close-non-active-diagnosis">Закрыть</button>
+            </div>
+        </div>
+        <!-- end non active diagnosis modal  -->
+
+        <!-- END DIAGNOSIS MODAL -->
+
+        <!-- TREATMENT MODAL -->
+        <div class="modal modal-treatment">
+            <div class="modal_header modal-header-treatment">
+                Лечение
+            </div>
+            <div class="modal_body modal-body-treatment">
+                <div class="category-treatment"></div>
+                <div class="content-treatment"></div>
+            </div>
+            <div class="modal_footer modal-footer-treatment">
+                <button class="get-treatment">Посмотреть/Назначить</button>
+                <button class="close-treatment">Закрыть</button>
+            </div>
+        </div>
+        <!-- non-active-treatment-modal -->
+        <div class="modal modal-non-active-treatment">
+            <div class="modal_header">
+                Лечение
+            </div>
+            <div class="modal_body modal-body-non-active-treatment">
+                <h2>Перед назначением лечения нужно поставить диагноз</h2>
+            </div>
+            <div class="modal_footer modal-footer-non-active-treatment">
+                <button class="close-non-active-treatment">Закрыть</button>
+            </div>
+        </div>
+        <!-- non-active-treatment-modal -->
+        <!-- view treatment modal -->
+        <div class="modal modal-view-treatment">
+            <div class="modal_header modal-view-header-treatment">
+                Назначенное лечение
+            </div>
+            <div class="modal_body modal-view-body-treatment">
+
+            </div>
+            <div class="modal_footer modal-view-footer-treatment">
+                <button class="set-treatment">Назначить лечение</button>
+                <button class="close-view-treatment">Закрыть</button>
+            </div>
+        </div>
+        <!-- end view treatment modal -->
+        <!-- END TREATMENT MODAL -->
+
+        <!-- FINISH MODAL  -->
+        <div class="modal modal-finish">
+            <div class="modal_header modal-header-finish">
+                Результаты
+            </div>
+            <div class="modal_body modal-body-finish">
+                <!-- <div class="category">
+                    <h2>1. Жалобы и анамне
+                        <span class="correctly">&#10003;</span>
+                    </h2>
+                    <div class=" wrong-message">Не все вопросы заданы
+                        <span class="wrong">&#65794;</span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="modal_footer modal-footer-finish">
+                <button class="close-finish">Завершить</button>
+            </div>
+        </div>
+        <!-- END FINISH MODAL  -->
+
+        <!-- SIMPLE MODAL -->
+        <div class="simple-modal-overlay">
+            <div class="simple-modal-body"></div>
+        </div>
+        <!-- END SIMPLE MODAL -->
+
+    </div>
