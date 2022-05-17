@@ -157,7 +157,7 @@ function dialogController() {
 
     //Удаляем из массива блок вопросов
     if (inputParametres.anamnesisData.length !== 0) {
-        var questionBlock = inputParametres.anamnesisData.shift()
+        questionBlock = inputParametres.anamnesisData.shift()
         addQuestion(questionBlock)
     }
     else {
@@ -166,11 +166,11 @@ function dialogController() {
     }
 
 
-    var questions = document.querySelectorAll('.question')
+    questions = document.querySelectorAll('.question')
     questions.forEach((question, index, arr) => {
         inputParametres.countQuestions = questions.length
         question.addEventListener("click", async event => {
-            var numberQuestion = question.getAttribute("number")
+            numberQuestion = question.getAttribute("number")
             question.remove()
             addDoctorMesageInChart(questionBlock[numberQuestion].doctor)
             addInAnamnesis(questionBlock[numberQuestion].patient, questionBlock[numberQuestion].eng_category, questionBlock[numberQuestion].ru_category)
@@ -182,15 +182,15 @@ function dialogController() {
     })
 }
 function addDoctorMesageInChart(message) {
-    var chartBox = document.querySelector(".chart")
-    var chartBody = chartBox.querySelector(".box_body")
+    chartBox = document.querySelector(".chart")
+    chartBody = chartBox.querySelector(".box_body")
     chartBody.innerHTML += '<div class="medic">' + message + ' <span>' + getTime() + '</span> </div>'
     scrollToEnd()
 }
 async function addPatientMesageInChart(message) {
 
-    var chartBox = document.querySelector(".chart")
-    var chartBody = chartBox.querySelector(".box_body")
+    chartBox = document.querySelector(".chart")
+    chartBody = chartBox.querySelector(".box_body")
     await sleep(500)
     chartBody.innerHTML += '<div class="patient loading"> <div class="load">...</div> </div>'
     scrollToEnd()
@@ -201,7 +201,7 @@ async function addPatientMesageInChart(message) {
 }
 function addInAnamnesis(message, en_category, ru_category) {
     document.querySelector(".default-message") ? document.querySelector(".default-message").remove() : ""
-    var classCategory = document.querySelector("." + en_category)
+    classCategory = document.querySelector("." + en_category)
     if (classCategory) classCategory.innerHTML += '<p>' + message + '</p>'
     else {
         document.querySelector(".modal-body-anamnesis").innerHTML +=
@@ -213,7 +213,7 @@ function addInAnamnesis(message, en_category, ru_category) {
     }
 }
 function scrollToEnd() {
-    var chartBody = document.querySelector(".box_body")
+    chartBody = document.querySelector(".box_body")
     chartBody.scrollTop = chartBody.scrollHeight
 }
 function getTime() {
@@ -225,8 +225,8 @@ function sleep(ms) {
 }
 // QUESTIONS
 function addQuestion(arrQuestionBlock) {
-    var questionsBox = document.querySelector(".questions")
-    var questionsBody = questionsBox.querySelector(".box_body")
+    questionsBox = document.querySelector(".questions")
+    questionsBody = questionsBox.querySelector(".box_body")
     arrQuestionBlock.forEach((questObject, index) => {
         questionsBody.innerHTML += '<div class="question" number="' + index + '">' + questObject.doctor + '</div>'
     })
@@ -900,4 +900,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;
