@@ -1,4 +1,5 @@
 class QuestController < ApplicationController
+  before_action :authenticate_user!
   def identification
   end
 
