@@ -1,5 +1,4 @@
 console.log("Script is working")
-window.onload = function() {
 inputParametres = {
 
     //anamnesis input parametres
@@ -897,4 +896,3 @@ function simpleModal() {
 //---------------
 //----------------
 
-};
