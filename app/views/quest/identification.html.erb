@@ -10,7 +10,7 @@
             <!-- CHART -->
             <div class="chart box">
                 <div class="box_header">
-                    <img src="./images/patient.jpg" alt="Иван Иванов">
+                    <%= image_tag("patient.jpg", :alt => "Иван Иванов") %>-->
                     <div class="title">
                         <span class="title__name">Иван Иванов</span>
                         <span class="title__dicription">Пенсионер</span>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="box_body">
                     <!-- chart body -->
-                <div class="patient">Здравствуйте, доктор! <span>12:23</span> </div></div>
+                </div>
             </div>
             <!-- END CHART -->
 
@@ -30,7 +30,7 @@
                 </div>
                 <div class="box_body">
                     <!-- question body -->
-                <div class="question" number="0">Здравствуйте! Что вас беспокоит?</div></div>
+                </div>
             </div>
             <!-- END DOCTOR QUESTION BOX -->
 
@@ -130,12 +130,10 @@
                 Инструментальные исследования
             </div>
             <div class="modal_body modal-body-instrumental-research">
-                <div class="instrument pulkoksimetr"><img src="images/pulkoksimetr.jpg" alt="Пульсоксиметр"><span>Пульсоксиметр</span></div>
-                <div class="instrument ekg"><img src="images/ekg.jpg" alt="ЭКГ"><span>ЭКГ</span></div>
-                <div class="instrument troponinovyj-test"><img src="images/troponinovyj-test.jpg" alt="Тропониновый
-                        тест"><span>Тропониновый
-                        тест</span></div>
-                <div class="instrument glukometr"><img src="images/glukometr.jpg" alt="Глюкометр"><span>Глюкометр</span>
+                <div class="instrument pulkoksimetr"><%= image_tag("pulsoksimetr.jpg", :alt => "Пульсоксиметр") %><span>Пульсоксиметр</span></div>
+                <div class="instrument ekg"><%= image_tag("ekg.jpg", :alt => "ЭКГ") %><span>ЭКГ</span></div>
+                <div class="instrument troponinovyj-test"><%= image_tag("troponinovyj-test.jpg", :alt => "Тропониновый тест") %><span>Тропониновый тест</span></div>
+                <div class="instrument glukometr"><%= image_tag("glukometr.jpg", :alt => "Глюкометр") %><span>Глюкометр</span>
                 </div>
             </div>
             <div class="modal_footer modal-footer-instrumental-research">
@@ -154,14 +152,14 @@
         <!-- ekg modal-->
         <div class="modal modal-ekg">
             <div class="modal_header modal-header-ekg">ЭКГ</div>
-            <div class="modal_body modal-body-ekg"><img src="images/ekg_01.jpg"></div>
+            <div class="modal_body modal-body-ekg"><%= image_tag("ekg_01.jpg", :alt => "Результат ЭКГ") %></div>
             <div class="modal_footer modal-footer-ekg"><button class="close-ekg">Закрыть</button></div>
         </div>
         <!-- end ekg modal-->
         <!-- troponinovyj-test modal-->
         <div class="modal modal-troponinovyj-test">
             <div class="modal_header modal-header-troponinovyj-test">Тропониновый тест</div>
-            <div class="modal_body modal-body-troponinovyj-test"><img src="images/troponinovjy-minus.jpg"></div>
+            <div class="modal_body modal-body-troponinovyj-test"><%= image_tag("troponinovjy-minus.jpg", :alt => "Результат троп. теста") %></div>
             <div class="modal_footer modal-footer-troponinovyj-test"><button class="close-troponinovyj-test">Закрыть</button></div>
         </div>
         <!-- end troponinovyj-test modal-->
