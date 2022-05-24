@@ -627,10 +627,8 @@ function instrumentalResearchCheck(parentNode) {
         '</div>'
 }
 // CHECKING BY DIAGNOSIS 
-// Формирует текст с результатами прохождения квеста
-// diagnosisMainCheck(), diagnosisComplicationsCheck(), diagnosisAccompanyingIllnessesCheck возвращают текст HTML
 function diagnosisCheck(parentNode) {
-    var diagnosisInnerText = '<div class="subcategory">Основной:' +
+    diagnosisInnerText = '<div class="subcategory">Основной:' +
         diagnosisMainCheck() +
         '</div>' +
         '<div class="subcategory">Осложнения:' +
@@ -667,7 +665,7 @@ function diagnosisComplicationsCheck() {
         let correctAnswer = false
         let wrongAnswer = false
         inputParametres.diagnosisComplications.forEach(complication => {
-            var ru_name = document.querySelector('#' + complication).value
+            ru_name = document.querySelector('#' + complication).value
 
             if (inputParametres.correctDiagnosisComplications.indexOf(ru_name) !== -1) {
                 correctAnswer = true
@@ -698,7 +696,7 @@ function diagnosisAccompanyingIllnessesCheck() {
         let correctAnswer = false
         let wrongAnswer = false
         inputParametres.diagnosisAccompanyingIllnesses.forEach(accompanyingIllnesses => {
-            var ru_name = document.querySelector('#' + accompanyingIllnesses).value
+            ru_name = document.querySelector('#' + accompanyingIllnesses).value
 
             if (inputParametres.correctDiagnosisAccompanyingIllnesses.indexOf(ru_name) !== -1) {
                 correctAnswer = true
@@ -902,4 +900,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;
