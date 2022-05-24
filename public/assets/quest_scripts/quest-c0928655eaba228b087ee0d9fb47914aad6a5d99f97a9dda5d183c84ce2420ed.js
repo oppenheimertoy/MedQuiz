@@ -135,7 +135,7 @@ window.addEventListener("load", () => {
         console.log("Clicked Anamnesis")
     })
 
-    const modalStarting = document.querySelector(".modal-starting")
+    var modalStarting = document.querySelector(".modal-starting")
     modalStarting.style.display = "flex"
 
     document.querySelector(".modal_start").addEventListener("click", () => {
@@ -166,11 +166,11 @@ function dialogController() {
     }
 
 
-    questions = document.querySelectorAll('.question')
+    var questions = document.querySelectorAll('.question')
     questions.forEach((question, index, arr) => {
         inputParametres.countQuestions = questions.length
         question.addEventListener("click", async event => {
-            numberQuestion = question.getAttribute("number")
+            var numberQuestion = question.getAttribute("number")
             question.remove()
             addDoctorMesageInChart(questionBlock[numberQuestion].doctor)
             addInAnamnesis(questionBlock[numberQuestion].patient, questionBlock[numberQuestion].eng_category, questionBlock[numberQuestion].ru_category)
@@ -182,8 +182,8 @@ function dialogController() {
     })
 }
 function addDoctorMesageInChart(message) {
-    chartBox = document.querySelector(".chart")
-    chartBody = chartBox.querySelector(".box_body")
+    var chartBox = document.querySelector(".chart")
+    var chartBody = chartBox.querySelector(".box_body")
     chartBody.innerHTML += '<div class="medic">' + message + ' <span>' + getTime() + '</span> </div>'
     scrollToEnd()
 }
@@ -201,7 +201,7 @@ async function addPatientMesageInChart(message) {
 }
 function addInAnamnesis(message, en_category, ru_category) {
     document.querySelector(".default-message") ? document.querySelector(".default-message").remove() : ""
-    classCategory = document.querySelector("." + en_category)
+    var classCategory = document.querySelector("." + en_category)
     if (classCategory) classCategory.innerHTML += '<p>' + message + '</p>'
     else {
         document.querySelector(".modal-body-anamnesis").innerHTML +=
