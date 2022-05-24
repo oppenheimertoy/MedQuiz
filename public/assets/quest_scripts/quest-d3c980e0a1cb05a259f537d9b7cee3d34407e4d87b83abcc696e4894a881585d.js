@@ -627,10 +627,8 @@ function instrumentalResearchCheck(parentNode) {
         '</div>'
 }
 // CHECKING BY DIAGNOSIS 
-// Формирует текст с результатами прохождения квеста
-// diagnosisMainCheck(), diagnosisComplicationsCheck(), diagnosisAccompanyingIllnessesCheck возвращают текст HTML
 function diagnosisCheck(parentNode) {
-    var diagnosisInnerText = '<div class="subcategory">Основной:' +
+    diagnosisInnerText = '<div class="subcategory">Основной:' +
         diagnosisMainCheck() +
         '</div>' +
         '<div class="subcategory">Осложнения:' +
@@ -902,4 +900,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;
