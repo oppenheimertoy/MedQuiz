@@ -586,6 +586,15 @@ function finishModule() {
             diagnosisCheck(finishBody)
             treatmentCheck(finishBody)
 
+            console.log("Тут надо отправить запрос")
+
+            let user1 = {
+                answer: 
+                {
+                    one: 'John',
+                    two: 'Smith'
+                }
+            }
 
             let xhr = new XMLHttpRequest();
             xhr.timeout = 3000
@@ -599,7 +608,7 @@ function finishModule() {
             xhr.setRequestHeader("Content-Type", "application/json");
 
 
-            xhr.send(JSON.stringify(inputParametres))
+            xhr.send(JSON.stringify(user1))
 
             xhr.onload = function(){
                 if (xhr.status != 200) {
@@ -930,4 +939,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;

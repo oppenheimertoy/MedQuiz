@@ -586,20 +586,18 @@ function finishModule() {
             diagnosisCheck(finishBody)
             treatmentCheck(finishBody)
 
+            console.log("Тут надо отправить запрос")
+
+            let user1 = {
+                name: 'John',
+                surname: 'Smith'
+            }
 
             let xhr = new XMLHttpRequest();
             xhr.timeout = 3000
+            xhr.open('POST', '127.0.0.1:3000/quest/user_answer')
 
-            
-            xhr.open('POST', 'user_answer')
-
-            //xhr.setRequestHeader('X-Transaction', 'POST Example')
-            xhr.setRequestHeader("x-csrf-token", "fetch");    
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-
-
-            xhr.send(JSON.stringify(inputParametres))
+            xhr.send(user1)
 
             xhr.onload = function(){
                 if (xhr.status != 200) {
@@ -612,7 +610,11 @@ function finishModule() {
             xhr.onerror = function() {
                 alert("Запрос не удался");
             }
-        
+            
+
+
+            let result =  response.json()
+            console.log(result.message)
 
             console.log('Ответ принят')
 
@@ -930,4 +932,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;
