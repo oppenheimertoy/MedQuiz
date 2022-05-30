@@ -2,4 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "quest_scripts/quest"
+import "./popper";
+import "./bootstrap.min";
 
