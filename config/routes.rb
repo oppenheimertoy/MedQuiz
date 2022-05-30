@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root "quest#result"
   get 'quest/identification'
   get 'quest/try'
+  post 'quest/user_answer'
   #get 'index/greeting'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

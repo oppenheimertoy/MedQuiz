@@ -586,6 +586,12 @@ function finishModule() {
             diagnosisCheck(finishBody)
             treatmentCheck(finishBody)
 
+            console.log("Тут надо отправить запрос")
+
+            let user1 = {
+                name: 'John',
+                surname: 'Smith'
+            }
 
             let xhr = new XMLHttpRequest();
             xhr.timeout = 3000
@@ -593,13 +599,7 @@ function finishModule() {
             
             xhr.open('POST', 'user_answer')
 
-            //xhr.setRequestHeader('X-Transaction', 'POST Example')
-            xhr.setRequestHeader("x-csrf-token", "fetch");    
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-
-
-            xhr.send(JSON.stringify(inputParametres))
+            xhr.send(user1)
 
             xhr.onload = function(){
                 if (xhr.status != 200) {
@@ -930,4 +930,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;

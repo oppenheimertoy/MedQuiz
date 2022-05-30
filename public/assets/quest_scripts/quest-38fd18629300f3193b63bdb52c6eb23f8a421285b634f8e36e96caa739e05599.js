@@ -586,35 +586,7 @@ function finishModule() {
             diagnosisCheck(finishBody)
             treatmentCheck(finishBody)
 
-
-            let xhr = new XMLHttpRequest();
-            xhr.timeout = 3000
-
-            
-            xhr.open('POST', 'user_answer')
-
-            //xhr.setRequestHeader('X-Transaction', 'POST Example')
-            xhr.setRequestHeader("x-csrf-token", "fetch");    
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-
-
-            xhr.send(JSON.stringify(inputParametres))
-
-            xhr.onload = function(){
-                if (xhr.status != 200) {
-                    alert(`Ошибка ${xhr.status}: ${xhr.statusText}`)
-                } else {
-                    alert(`Готово, получили ${xhr.response.length} байт`)
-                }
-            }
-
-            xhr.onerror = function() {
-                alert("Запрос не удался");
-            }
-        
-
-            console.log('Ответ принят')
+            console.log("Тут надо отправить запрос")
 
             document.querySelector("button.close-finish").addEventListener("click", event => {
 
@@ -930,4 +902,4 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
+;
