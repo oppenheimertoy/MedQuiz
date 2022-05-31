@@ -1,4 +1,6 @@
 console.log("Script is working")
+
+
 var inputParametres = {
 
     //anamnesis input parametres
@@ -130,10 +132,6 @@ var inputParametres = {
 
 
 window.addEventListener("load", () => {
-
-    document.querySelector(".anamnesis").addEventListener("click", () => {
-        console.log("Clicked Anamnesis")
-    })
 
     const modalStarting = document.querySelector(".modal-starting")
     modalStarting.style.display = "flex"
@@ -930,4 +928,3 @@ function simpleModal() {
 //END MENU
 //---------------
 //----------------
-
